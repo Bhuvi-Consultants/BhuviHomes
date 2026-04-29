@@ -1,5 +1,5 @@
 export async function GET() {
-  const baseUrl = "https://bhuvihomes.in";
+  const baseUrl = "https://staging.bhuvihomes.in";
 
   const blogs = await fetch("https://api.bhuvihomes.in/blogs").then((res) =>
     res.json()

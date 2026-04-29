@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://bhuvihomes.in";
+  const baseUrl = "https://staging.bhuvihomes.in";
 
   return [
     {
