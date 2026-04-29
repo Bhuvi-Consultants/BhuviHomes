@@ -8,9 +8,40 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export const metadata = {
-  title: "Bhuvi Homes | Best Architects & Construction in Ranchi",
+  metadataBase: new URL("https://bhuvihomes.in"),
+
+  title: {
+    default: "Bhuvi Homes - Construction & Design in Ranchi",
+    template: "%s | Bhuvi Homes",
+  },
+
   description:
-    "Bhuvi Homes offers architecture, construction, and interior design services in Ranchi. Build your dream home with experts.",
+    "Bhuvi Homes provides house construction, interior design, and map approval services in Ranchi and Jharkhand.",
+
+  keywords: [
+    "construction company in ranchi",
+    "home construction jharkhand",
+    "architect in ranchi",
+  ],
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Bhuvi Homes",
+    description: "Construction and design company in Ranchi.",
+    url: "https://bhuvihomes.in",
+    siteName: "Bhuvi Homes",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -36,6 +67,24 @@ export default function RootLayout({ children }) {
 
           <Footer />
         </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Bhuvi Homes",
+              url: "https://bhuvihomes.in",
+              telephone: "+91-8986699600",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Ranchi",
+                addressRegion: "Jharkhand",
+                addressCountry: "IN",
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );

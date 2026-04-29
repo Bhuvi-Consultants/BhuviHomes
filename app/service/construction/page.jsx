@@ -14,13 +14,11 @@ import Image from "next/image";
 
 // ✅ SEO metadata (replaces Helmet)
 export const metadata = {
-  title: "Construction Company in Ranchi - Bhuvi Homes",
+  title: "House Construction in Ranchi",
   description:
-    "Explore Bhuvi Homes' comprehensive services including design and construction for your dream home.",
-  keywords:
-    "Home design Ranchi, Home construction Ranchi, Bhuvi Homes",
+    "Looking for house construction in Ranchi? Bhuvi Homes offers complete construction services with quality assurance.",
   alternates: {
-    canonical: "https://bhuvihomes.in/service/construction",
+    canonical: "/service/construction",
   },
 };
 
