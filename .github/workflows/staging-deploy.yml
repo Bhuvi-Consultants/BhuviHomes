@@ -20,7 +20,7 @@ jobs:
             cd /var/www/bhuvi-staging
 
             echo "Pulling latest code..."
-            get pull origin staging
+            git pull origin staging
 
             echo "Installing dependencies..."
             pnpm install
