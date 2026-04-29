@@ -17,18 +17,25 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+            # ensure correct node version
+            nvm use 24
+
             cd /var/www/bhuvi-staging
 
             echo "Pulling latest code..."
             git pull origin staging
 
             echo "Installing dependencies..."
-            /root/.local/share/pnpm/pnpm install
+            pnpm install
 
             echo "Building Next.js app..."
-            /root/.local/share/pnpm/pnpm build
+            pnpm build
 
             echo "Restarting PM2..."
-            /root/.local/share/pnpm/pm2 reload bhuvi-staging || /root/.local/share/pnpm/pm2 start "/root/.local/share/pnpm/pnpm start --port 3001" --name bhuvi-staging
+            pm2 reload bhuvi-staging || pm2 start "pnpm start --port 3001" --name bhuvi-staging
 
             echo "Deployment complete"
