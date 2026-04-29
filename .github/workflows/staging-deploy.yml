@@ -23,12 +23,12 @@ jobs:
             git pull origin staging
 
             echo "Installing dependencies..."
-            pnpm install
+            /root/.local/share/pnpm install
 
             echo "Building Next.js app..."
-            pnpm build
+            /root/.local/share/pnpm build
 
             echo "Restarting PM2..."
-            pm2 restart bhuvi-staging || pm2 start "pnpm start --port 3001" --name bhuvi-staging
+            /root/.local/share/pm2 restart bhuvi-staging || /root/.local/share/pm2 start "pnpm start --port 3001" --name bhuvi-staging
 
             echo "Deployment complete"
