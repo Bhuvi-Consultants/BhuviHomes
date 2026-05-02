@@ -1,10 +1,18 @@
 export async function GET() {
   const baseUrl = "https://staging.bhuvihomes.in";
+  const res = await fetch(`${process.env.API_BASE_URL}/api/v1/blogs/public`, {
+    cache: "no-store",
+  });
 
-  const blogs = await fetch("https://api.bhuvihomes.in/blogs").then((res) =>
-    res.json()
-  );
+  const contentType = res.headers.get("content-type");
 
+  if (!contentType || !contentType.includes("application/json")) {
+    const text = await res.text();
+    return new Response(`Invalid JSON response:\n${text}`, { status: 500 });
+  }
+
+  const json = await res.json();
+  const blogs = Array.isArray(json) ? json : json.data || [];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${blogs
@@ -14,7 +22,7 @@ export async function GET() {
         <loc>${baseUrl}/blogs/${blog.slug}</loc>
         <lastmod>${blog.updatedAt}</lastmod>
         <priority>0.7</priority>
-      </url>`
+      </url>`,
       )
       .join("")}
   </urlset>`;

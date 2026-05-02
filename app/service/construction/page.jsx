@@ -1,16 +1,23 @@
-
 import Link from "next/link";
-import { PencilRuler, Building, FlaskConical, ArrowRight, Shield, Users, HeartHandshake, BookMarked } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import SectionHeader from '@/components/SectionHeader';
-import CallToAction from '@/components/CallToAction';
-import PricingPlan from '@/components/PricingPlan';
-import ProcessStep from '@/components/ProcessStep';
-import CoverPhoto from '@/public/CoverPhoto.webp'
-import ProjectCarousel from '@/components/ProjectCarousel';
-import { Construction } from 'lucide-react';
+import {
+  PencilRuler,
+  Building,
+  FlaskConical,
+  ArrowRight,
+  Shield,
+  Users,
+  HeartHandshake,
+  BookMarked,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import SectionHeader from "@/components/SectionHeader";
+import CallToAction from "@/components/CallToAction";
+import PricingPlan from "@/components/PricingPlan";
+import ProcessStep from "@/components/ProcessStep";
+import CoverPhoto from "@/public/CoverPhoto.webp";
+import ProjectCarousel from "@/components/ProjectCarousel";
+import { Construction } from "lucide-react";
 import Image from "next/image";
-
 
 // ✅ SEO metadata (replaces Helmet)
 export const metadata = {
@@ -27,27 +34,56 @@ export default function ConstructionPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Construction Services",
-    "provider": {
-      "@type": "Organization",
-      "name": "Bhuvi Homes",
-      "url": "https://www.bhuvihomes.in"
+    name: "Construction Services",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Bhuvi Homes",
+      url: "https://bhuvihomes.in",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "Place",
-      "name": "India"
+      name: "Ranchi",
     },
-    "description": "Professional residential and commercial construction services from concept to completion.",
-    "url": "https://bhuvihomes.in/service/design",
-    "serviceType": "Home Design and Construction",
+    description:
+      "Professional residential and commercial construction services from concept to completion.",
+    url: "https://bhuvihomes.in/service/design",
+    serviceType: "Home Design and Construction",
   };
 
   return (
     <div className="bg-gray-50">
-          {/* ✅ JSON-LD script */}
+      {/* ✅ JSON-LD script */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What is the cost of house construction in Ranchi?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Cost depends on material and design but typically ranges between ₹1500–₹2500 per sq ft.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you provide complete construction service?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, Bhuvi Homes provides design, planning and full construction execution.",
+                },
+              },
+            ],
+          }),
+        }}
       />
 
       {/* Hero Section */}
@@ -57,7 +93,8 @@ export default function ConstructionPage() {
             Construction
           </h1>
           <p className="text-xl text-gray-500 mb-8 max-w-3xl mx-auto">
-            Experience the joy of living in a home crafted with our <b>Stress-Free & High-Quality</b> construction services.
+            Experience the joy of living in a home crafted with our{" "}
+            <b>Stress-Free & High-Quality</b> construction services.
           </p>
         </div>
       </section>
@@ -73,7 +110,10 @@ export default function ConstructionPage() {
                 className="mb-8"
               />
               <p className="text-gray-500 mb-6">
-                Our construction team brings your design to life with precision, quality craftsmanship, and attention to detail. We manage every aspect of the building process to ensure your project is completed on time, on budget, and to the highest standards.
+                Our construction team brings your design to life with precision,
+                quality craftsmanship, and attention to detail. We manage every
+                aspect of the building process to ensure your project is
+                completed on time, on budget, and to the highest standards.
               </p>
 
               <div className="space-y-4 mb-8">
@@ -82,7 +122,9 @@ export default function ConstructionPage() {
                     <Building className="w-5 h-5 text-green-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-medium mb-1">Residential Construction</h3>
+                    <h3 className="text-lg font-medium mb-1">
+                      Residential Construction
+                    </h3>
                   </div>
                 </div>
 
@@ -91,7 +133,9 @@ export default function ConstructionPage() {
                     <Building className="w-5 h-5 text-green-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-medium mb-1">Commercial Construction</h3>
+                    <h3 className="text-lg font-medium mb-1">
+                      Commercial Construction
+                    </h3>
                     <p className="text-gray-500"></p>
                   </div>
                 </div>
@@ -106,8 +150,16 @@ export default function ConstructionPage() {
                 </div>
               </div>
 
-              <Button asChild className="bg-green-700 hover:bg-green-700/90 text-green-700-foreground" aria-label="Start Your Building Project">
-                <Link href="/contact" className="inline-flex items-center gap-2" aria-label="Contact Us to Start Your Building Project">
+              <Button
+                asChild
+                className="bg-green-700 hover:bg-green-700/90 text-green-700-foreground"
+                aria-label="Start Your Building Project"
+              >
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2"
+                  aria-label="Contact Us to Start Your Building Project"
+                >
                   Start Your Building Project
                   <ArrowRight size={16} />
                 </Link>
@@ -116,10 +168,14 @@ export default function ConstructionPage() {
             <div className="lg:w-1/2 order-1 lg:order-2">
               <div className="relative">
                 <Image
-                  src={CoverPhoto ? CoverPhoto : 'https://bhuvihomes.in/CoverPhoto.webp'}
+                  src={
+                    CoverPhoto
+                      ? CoverPhoto
+                      : "https://bhuvihomes.in/CoverPhoto.webp"
+                  }
                   alt="Home construction"
                   className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/3]"
-                  loading='lazy'
+                  loading="lazy"
                 />
                 <div className="absolute -top-6 -left-6 bg-white rounded-lg shadow-lg p-4 animate-fade-in">
                   <div className="flex items-center gap-3">
@@ -135,7 +191,7 @@ export default function ConstructionPage() {
         </div>
       </section>
 
-            {/* Featured Projects Section */}
+      {/* Featured Projects Section */}
       <section className="section-padding bg-gradient-to-b from-white to-offwhite">
         <div className="container mx-auto px-4">
           <SectionHeader
@@ -144,12 +200,16 @@ export default function ConstructionPage() {
           />
 
           <div className="mt-10">
-            <ProjectCarousel Ptype='construction' />
+            <ProjectCarousel Ptype="construction" />
           </div>
 
           <div className="mt-10 flex justify-center">
             <Button asChild className="bg-red-500 hover:bg-red-600 text-white">
-              <Link href="/projects" className="inline-flex items-center gap-2" aria-label="Explore more construction projects by BhuviHomes">
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2"
+                aria-label="Explore more construction projects by BhuviHomes"
+              >
                 Explore More
                 <ArrowRight size={16} />
               </Link>
@@ -166,7 +226,6 @@ export default function ConstructionPage() {
           />
 
           <div className="max-w-3xl mx-auto">
-
             <ProcessStep
               number={1}
               title="Meet our Expert"
@@ -206,7 +265,7 @@ export default function ConstructionPage() {
         </div>
       </section>
 
-      <PricingPlan type={'Construction'} />
+      <PricingPlan type={"Construction"} />
 
       {/* Call to Action */}
       <CallToAction
@@ -216,9 +275,6 @@ export default function ConstructionPage() {
         buttonLink="/contact"
         variant="accent"
       />
-
     </div>
   );
-};
-
-
+}

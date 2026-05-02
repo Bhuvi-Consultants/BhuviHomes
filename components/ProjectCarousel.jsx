@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useState, useEffect, useMemo } from "react";
 
 const Project = [
@@ -195,8 +195,6 @@ const Project = [
     URL: "qF_VPfmcj6I?si=vUBvhiodFXtH1bli",
   },
 
-
-
   {
     id: 19,
     title: "Modern G+1 Residence",
@@ -335,40 +333,48 @@ export default function ProjectCarousel({ Ptype = "All" }) {
 
       {/* 🔹 Swiper Carousel */}
       <Swiper
-        modules={[Autoplay, Pagination]}
+        modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={20}
-        slidesPerView={Math.min(filteredProjects.length, 1)}
+        slidesPerView={1}
         loop={filteredProjects.length >= 3}
-        autoplay={{ delay: 7000, pauseOnMouseEnter: true }}
+        autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
         pagination={{ clickable: true }}
         breakpoints={{
-          //   0: { slidesPerView: 1.1 },
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          1024: { slidesPerView: 2 },
+          1280: { slidesPerView: 3 },
         }}
       >
         {filteredProjects.map((p, index) => (
           <SwiperSlide key={index}>
-            <div className="group h-full overflow-hidden rounded-xl bg-background">
-              <div className="aspect-video w-full">
-                <div className="relative w-full aspect-video">
+            <div className="group h-full overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-all duration-300">
+              {/* MEDIA */}
+              <div className="relative w-full aspect-video overflow-hidden">
+                {p.URL ? (
                   <iframe
                     className="absolute inset-0 w-full h-full"
                     src={`https://www.youtube.com/embed/${cleanYouTubeId(p.URL)}?mute=1`}
                     title={p.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                   />
-                </div>
+                ) : (
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                )}
               </div>
 
+              {/* CONTENT */}
               <div className="p-4">
-                <span className="text-xs text-red-500 font-medium">
+                <span className="text-xs text-primary font-medium">
                   {p.type}
                 </span>
-                <h3 className="mt-1 font-semibold">{p.title}</h3>
+
+                <h3 className="mt-1 font-semibold line-clamp-2">{p.title}</h3>
+
                 <p className="text-sm text-gray-500">{p.location}</p>
               </div>
             </div>

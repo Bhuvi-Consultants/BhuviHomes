@@ -45,7 +45,7 @@ const OurApproach = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button asChild className="bg-green-700/90 hover:bg-green-700 text-green-700-foreground group" aria-label="Learn more about our home design and construction process">
+          <Button asChild className="bg-primary/90 hover:bg-primary text-primary-foreground group" aria-label="Learn more about our home design and construction process">
             <Link href="/how-it-works" className="flex items-center" aria-label="Learn more about our home design and construction process">
               Learn More About Our Process
               <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" />

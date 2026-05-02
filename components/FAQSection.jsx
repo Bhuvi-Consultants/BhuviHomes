@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 
 const FAQSection = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-white">
       <div className="container mx-auto">
 
         {/* Heading */}

@@ -1,60 +1,93 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { getBlogsByCategory } from "../../api-services/blogApi";
+import Image from "next/image";
 
-export default function RelatedBlogs({ category }) {
-  const { slug } = useParams();
-  const [blogs, setBlogs] = useState([]);
+// ==============================
+// 🔥 FETCH RELATED BLOGS (SERVER)
+// ==============================
+async function getRelatedBlogs(category, currentSlug) {
+  const res = await fetch(
+    `${process.env.API_BASE_URL}/api/v1/blogs?category=${category}`,
+    { cache: "no-store" },
+  );
+  console.log(res);
+  if (!res.ok) return [];
 
-  useEffect(() => {
-    if (!category) return;
+  const data = await res.json();
 
-    getBlogsByCategory(category).then((data) => {
-      // exclude current blog
-      const filtered = data.filter((blog) => blog.slug !== slug);
-      setBlogs(filtered.slice(0, 3));
-    });
-  }, [category, slug]);
+  // handle response shape
+  const blogs = Array.isArray(data) ? data : data.data || [];
 
-  if (!blogs.length) return null;
+  // remove current blog
+  return blogs.filter((blog) => blog.slug !== currentSlug).slice(0, 3);
+}
+
+// ==============================
+// COMPONENT
+// ==============================
+export default async function RelatedBlogs({ category, currentSlug }) {
+  console.log("category:", category);
+  if (!category)
+    return <div className="text-center  py-20">No Related Blog found</div>;
+
+  const blogs = await getRelatedBlogs(category, currentSlug);
+  console.log("blogs:", blogs);
+
+  if (!blogs || blogs.length === 0) {
+    return (
+      <div className="text-center py-10 text-gray-500">
+        No related blogs found
+      </div>
+    );
+  }
 
   return (
-<section className="related-blogs">
-  <div className="container">
-    <div className="related-header">
-      <h3>Related Articles</h3>
-      <p>You may also like these articles</p>
-    </div>
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4">
+        {/* HEADER */}
+        <div className="mb-10 text-center">
+          <h3 className="text-2xl font-semibold">Related Articles</h3>
+          <p className="text-gray-500 text-sm">
+            You may also like these articles
+          </p>
+        </div>
 
-    <div className="related-grid">
-      {blogs.slice(0, 3).map((blog) => (
-        <article key={blog._id} className="related-card">
-          <Link href={`/blog/${blog?.slug}`} className="card-link">
-            
-            <div className="image-wrapper">
-              <img
-                src={blog?.featureImage?.secure_url}
-                alt={blog?.title}
-                loading="lazy"
-              />
-              <span className="category-badge">
-                {blog?.category}
-              </span>
-            </div>
+        {/* GRID */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogs.map((blog) => (
+            <article
+              key={blog._id}
+              className="bg-white rounded-xl overflow-hidden border hover:shadow-md transition"
+            >
+              <Link href={`/blogs/${blog.slug}`}>
+                {/* IMAGE */}
+                <div className="relative w-full h-48">
+                  <Image
+                    src={blog.featureImage?.secure_url}
+                    alt={blog.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
 
-            <div className="card-content">
-              <h4>{blog?.title}</h4>
-              <span className="read-more">Read Article</span>
-            </div>
+                {/* CONTENT */}
+                <div className="p-4">
+                  <span className="text-xs text-primary font-medium">
+                    {blog.category}
+                  </span>
 
-          </Link>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
+                  <h4 className="mt-2 text-md font-semibold line-clamp-2">
+                    {blog.title}
+                  </h4>
+
+                  <span className="text-sm text-primary mt-2 inline-block">
+                    Read Article →
+                  </span>
+                </div>
+              </Link>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

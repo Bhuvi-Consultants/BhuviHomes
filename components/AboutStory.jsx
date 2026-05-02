@@ -16,26 +16,26 @@ const AboutStory = () => {
               centered={false}
               className="mb-8"
             />
-            <p className="text-gray-500 mb-6">
+            <p className="text-muted-foreground mb-6">
             <b>BhuviHomes a product by Bhuvi Consultants Founded in 2019</b>, began with a simple mission: to create beautiful, functional homes where families can thrive. What started as a small team of three passionate professionals has grown into a full-service design and construction company with a reputation for excellence.
             </p>
-            <p className="text-gray-500 mb-6">
+            <p className="text-muted-foreground mb-6">
               Our journey has been defined by a commitment to quality, innovation, and client satisfaction. We've completed over 14+ projects, each reflecting our dedication to be the best <b>Home Design & Construction Company in Ranchi, Jharkhand</b>.
             </p>
             <div className="flex items-center gap-6 mb-6">
               <div className="text-center">
                 <p className="text-4xl font-serif font-bold text-green-700">14+</p>
-                <p className="text-sm text-gray-500">Projects Completed</p>
+                <p className="text-sm text-muted-foreground">Projects Completed</p>
               </div>
               <div className="h-12 w-px bg-border"></div>
               <div className="text-center">
                 <p className="text-4xl font-serif font-bold text-green-700">7+</p>
-                <p className="text-sm text-gray-500">Years of Experience in Operation</p>
+                <p className="text-sm text-muted-foreground">Years of Experience in Operation</p>
               </div>
               <div className="h-12 w-px bg-border"></div>
               <div className="text-center">
                 <p className="text-4xl font-serif font-bold text-green-700">98%</p>
-                <p className="text-sm text-gray-500">Client Satisfaction</p>
+                <p className="text-sm text-muted-foreground">Client Satisfaction</p>
               </div>
             </div>
           </div>

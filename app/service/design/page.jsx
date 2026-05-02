@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import {
   PencilRuler,
@@ -14,10 +13,10 @@ import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
 import CallToAction from "@/components/CallToAction";
 import PricingPlan from "@/components/PricingPlan";
-import ProcessStep from "@/components/ProcessStep";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import Design from "@/public/design.png";
 import Image from "next/image";
+import ProcessSection from "@/components/ProcessSection";
 
 // ✅ SEO metadata (replaces Helmet)
 export const metadata = {
@@ -155,7 +154,11 @@ export default function DesignPage() {
                 className="border-green-700 text-green-700"
                 aria-label="Contact Us to Start Your Design Project"
               >
-                <Link href="/contact" className="inline-flex items-center gap-2" aria-label="Get a Design Consultation">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2"
+                  aria-label="Get a Design Consultation"
+                >
                   Get a Design Consultation
                   <ArrowRight size={16} />
                 </Link>
@@ -178,8 +181,16 @@ export default function DesignPage() {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <Button asChild className="bg-red-500 hover:bg-red-600 text-white" aria-label="Explore More Design Projects">
-              <Link href="/projects" className="inline-flex items-center gap-2" aria-label="Explore More Design Projects">
+            <Button
+              asChild
+              className="bg-red-500 hover:bg-red-600 text-white"
+              aria-label="Explore More Design Projects"
+            >
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2"
+                aria-label="Explore More Design Projects"
+              >
                 Explore More
                 <ArrowRight size={16} />
               </Link>
@@ -188,44 +199,11 @@ export default function DesignPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-gradient-to-t from-white to-offwhite overflow-hidden">
-        <div className="container mx-auto">
-          <SectionHeader
-            title="How It Works"
-            subtitle="Our simple, transparent process ensures a smooth journey from concept to completion."
-          />
-
-          <div className="max-w-3xl mx-auto">
-            <ProcessStep
-              number={1}
-              title="Meet our Expert"
-              description="We meet to discuss your vision, needs, and budget to establish project goals."
-              icon={Users}
-            />
-
-            <ProcessStep
-              number={2}
-              title="Book with Us"
-              description="Good to go! Your dream home can be booked with a Token money"
-              icon={BookMarked}
-            />
-            <ProcessStep
-              number={3}
-              title="Design & Planning"
-              description="Our team creates detailed designs and plans based on your requirements."
-              icon={PencilRuler}
-            />
-
-            <ProcessStep
-              number={4}
-              title="Receive Designs"
-              description="You will get a detailed drawing with in-depth planning of your dream home till you are completely satisfied."
-              icon={Shield}
-              isLast
-            />
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        title="How It Works"
+        subtitle="Our simple process ensures accurate, practical home design across Jharkhand."
+        type="Design"
+      />
 
       <PricingPlan type={"Design"} />
 

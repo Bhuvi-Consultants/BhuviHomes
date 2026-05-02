@@ -34,7 +34,7 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="bg-gray-50"> {/* replaced bg-gray-50 */}
+    <div className="bg-offwhite'"> {/* replaced bg-gray-50 */}
 
       {/* ✅ JSON-LD script */}
       <script

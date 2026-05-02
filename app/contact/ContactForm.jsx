@@ -59,7 +59,10 @@ export default function ContactForm() {
 
     try {
       console.log(newLead);
-      const response = await axios.post("/api/v1/lead", newLead);
+      const response = await axios.post(
+        `${process.env.API_BASE_URL}/api/v1/lead`,
+        newLead,
+      );
       console.log(response);
     } catch (error) {
       console.log(error);

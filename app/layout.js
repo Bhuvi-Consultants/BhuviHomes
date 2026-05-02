@@ -48,25 +48,32 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="flex flex-col min-h-screen overflow-hidden">
-          <NavBar />
-
-          <main className="flex-grow overflow-x-hidden overflow-y-auto">
-            {children}
-          </main>
-
-          {/* Floating Buttons */}
-          <div className="flex justify-between items-center w-full fixed bottom-5 px-4 z-50 pointer-events-none">
-            <div className="pointer-events-auto">
-              <AddContact />
-            </div>
-            <div className="pointer-events-auto">
-              <Whatsapp />
-            </div>
-          </div>
-
-          <Footer />
-        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Bhuvi Homes",
+              url: "https://bhuvihomes.in",
+              telephone: "+91-8986699600",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Ranchi",
+                addressRegion: "Jharkhand",
+                addressCountry: "IN",
+              },
+              areaServed: {
+                "@type": "Place",
+                name: "Jharkhand",
+              },
+              sameAs: [
+                "https://www.facebook.com/",
+                "https://www.instagram.com/",
+              ],
+            }),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -85,6 +92,26 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
+        <div className="flex flex-col min-h-screen overflow-hidden">
+          <NavBar />
+
+          <main className="flex-grow overflow-x-hidden overflow-y-auto bg-offwhite">
+            {children}
+          </main>
+
+          {/* Floating Buttons */}
+          <div className="flex justify-between items-center w-full max-w-full fixed bottom-5 px-4 z-50 pointer-events-none">
+            <div className="pointer-events-auto w-fit h-fit bg-red-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition text-md">
+              <AddContact />
+            </div>
+            <div className="pointer-events-auto">
+              <Whatsapp />
+            </div>
+          </div>
+
+          <Footer />
+        </div>
+
       </body>
     </html>
   );

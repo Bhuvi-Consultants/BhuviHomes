@@ -36,7 +36,7 @@ const NavBar = () => {
     { name: "Interior", path: "/service/interior" },
     { name: "Projects", path: "/projects" },
     { name: "Blogs", path: "/blogs" },
-    { name: "City", path: "/city" },
+    // { name: "City", path: "/city" },
 
     // { name: "FAQs", path: "/faqs" },
     { name: "Contact", path: "/contact" },
@@ -90,7 +90,7 @@ const NavBar = () => {
               <Button
                 asChild
                 variant="default"
-                className="bg-red-500 hover:bg-red-600 text-green-700-foreground"
+                className="bg-red-500 hover:bg-red-600 text-primary-foreground"
                 aria-label="Call BhuviHomes for expert home design and construction in Ranchi"
               >
                 <Link href="tel:+918986699600" aria-label="Call BhuviHomes for expert home design and construction in Ranchi">
@@ -103,7 +103,7 @@ const NavBar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-gray-900"
+          className="lg:hidden text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
         >
@@ -112,7 +112,7 @@ const NavBar = () => {
 
         {/* Mobile Navigation */}
         {isMobile && mobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm shadow-md py-4">
+          <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm shadow-md py-4 animate-fade-in">
             <nav className="flex flex-col items-center gap-4">
               {navLinks.map((link) => (
                 <Link
@@ -130,7 +130,7 @@ const NavBar = () => {
               <Button
                 asChild
                 variant="default"
-                className="bg-red-500 text-green-700-foreground"
+                className="bg-red-500 text-primary-foreground"
                 aria-label="Call BhuviHomes for expert home design and construction in Ranchi"
               >
                 <Link href="tel:+918986699600" aria-label="Call BhuviHomes for expert home design and construction in Ranchi">

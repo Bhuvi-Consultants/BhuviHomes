@@ -8,7 +8,7 @@ const CallToAction = ({
   buttonLink,
 }) => {
   return (
-    <section className="py-16 bg-leaf text-white">
+    <section className="py-16 bg-gradient-to-b from-white to-offwhite">
       <div className="container mx-auto px-4 text-center max-w-3xl">
 
         {/* Title */}
@@ -17,7 +17,7 @@ const CallToAction = ({
         </h2>
 
         {/* Description */}
-        <p className="text-lg mb-8 text-white/90">
+        <p className="text-lg text-muted-foreground mb-8 ">
           {description}
         </p>
 
@@ -26,7 +26,7 @@ const CallToAction = ({
           asChild
           size="lg"
           aria-label={buttonText}
-          className="bg-background text-leaf hover:bg-gray-100"
+          className="bg-red-500 hover:bg-red-600 text-primary-foreground py-2 px-8 "
         >
           <Link href={buttonLink} aria-label={buttonText}>
             {buttonText}

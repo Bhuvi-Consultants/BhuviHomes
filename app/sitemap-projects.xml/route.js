@@ -1,9 +1,8 @@
 export async function GET() {
   const baseUrl = "https://staging.bhuvihomes.in";
-
-  const projects = await fetch("https://api.bhuvihomes.in/projects").then(
-    (res) => res.json(),
-  );
+  const projects = await fetch(`${process.env.API_BASE_URL}/api/v1/projects/public`, {
+    cache: "force-cache",
+  }).then((res) => res.json());
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

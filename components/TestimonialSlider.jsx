@@ -36,7 +36,7 @@ const TestimonialSlider = () => {
         {testimonials.map((item) => (
           <SwiperSlide key={item.id}>
             
-            <div className="overflow-hidden rounded-xl bg-background shadow">
+            <div className="overflow-hidden rounded-xl bg-white shadow">
               
               <div className="aspect-video w-full">
                 <iframe

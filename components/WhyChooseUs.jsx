@@ -48,7 +48,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-us" className="section-padding bg-gray-50">
+    <section id="why-us" className="section-padding bg-offwhite">
       <div className="container w-full">
 
         <div className="text-center mb-16">
@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
               key={reason.id}
               className="p-4 text-center transition-transform hover:-translate-y-2"
             >
-              <div className="inline-flex items-center justify-center mb-3">
+              <div className="inline-flex items-center justify-center bg-offwhite rounded-full mb-3">
                 {reason.icon}
               </div>
               <h3 className="text-xl font-bold">{reason.title}</h3>
@@ -81,7 +81,7 @@ const WhyChooseUs = () => {
         <div className="mt-16 text-center">
           <Link
             href="/about"
-            className="px-8 py-3 bg-leaf text-white rounded-md text-lg font-semibold hover:bg-opacity-90"
+            className="px-8 py-3 bg-leaf text-white rounded-md text-lg font-semibold hover:bg-opacity-90 transition-all inline-block"
             aria-label="Learn more about BhuviHomes and why homeowners across Jharkhand trust us"
           >
             Know More About Us

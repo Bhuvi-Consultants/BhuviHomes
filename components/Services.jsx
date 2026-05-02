@@ -26,7 +26,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="section-padding bg-background">
+    <section id="services" className="section-padding bg-white">
       <div className="container">
         {/* Heading */}
         <div className="text-center mb-16">
@@ -52,7 +52,7 @@ const Services = () => {
               }`}
               onMouseEnter={() => setActiveService(index)}
             >
-              <div className="bg-gray-50 rounded-2xl overflow-hidden h-full">
+              <div className="bg-offwhite rounded-2xl overflow-hidden h-full">
                 <div className="p-8 flex flex-col items-center justify-center gap-6">
                   <Link
                     href={service.link}

@@ -12,7 +12,7 @@ export const metadata = {
   },
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -29,6 +29,22 @@ export default function BlogPage() {
       },
     },
   };
+
+  const baseUrl = process.env.API_BASE_URL;
+
+  if (!baseUrl) {
+    throw new Error("API_BASE_URL is not defined");
+  }
+
+  const res = await fetch(`${baseUrl}/api/v1/blogs/public`, {
+    cache: "no-store", // safer during dev
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch blogs");
+  }
+
+  const blogs = await res.json();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -56,7 +72,7 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Listing */}
-      <BlogList />
+      <BlogList blogs={blogs} />
 
       {/* Internal Linking + Trust */}
       <section className="py-16 bg-white">

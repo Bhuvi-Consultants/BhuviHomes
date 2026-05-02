@@ -1,25 +1,8 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Calendar, Clock } from "lucide-react";
-import axios from "axios";
+import Image from "next/image";
 
-const BlogList = () => {
-  const [blogs, setBlogs] = useState([]);
-  useEffect(() => {
-
-    const fetchBlogs = async () => {
-      try {
-        const data = await axios.get("/api/v1/blogs/public");
-        console.log(data.data)
-        setBlogs(data.data);
-      } catch (err) {
-        console.error("Error fetching blogs:", err);
-      }}
-      fetchBlogs();
-  }, []);
-  console.log(blogs)
+const BlogList = ({ blogs }) => {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -30,15 +13,17 @@ const BlogList = () => {
               className="group bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition"
             >
               <Link
-                to={`/blog/${blog?.slug}`}
+                href={`/blogs/${blog?.slug}`}
                 className="block overflow-hidden"
                 aria-label={`Read more about ${blog?.title}`}
               >
-                <img
+                <Image
                   src={blog?.featureImage?.secure_url}
                   alt={blog?.title}
                   loading="lazy"
-                  className="w-full h-60 object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-300"
+                  width={900}
+                  height={400}
+                  className="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-300"
                 />
               </Link>
 
@@ -49,7 +34,7 @@ const BlogList = () => {
 
                 <h2 className="text-lg font-semibold leading-snug mb-3">
                   <Link
-                    to={`/blog/${blog?.slug}`}
+                    href={`/blogs/${blog?.slug}`}
                     className="hover:text-leaf transition"
                     aria-label={`Read more about ${blog?.title}`}
                   >
