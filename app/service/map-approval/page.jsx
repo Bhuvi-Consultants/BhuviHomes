@@ -12,6 +12,7 @@ import {
   Landmark,
   Star,
 } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 /* ✅ SEO */
 export const metadata = {
@@ -69,13 +70,14 @@ export default function MapApprovalPage() {
               </button>
             </div>
           </div>
-          <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative aspect-auto rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuD36SG3ar7Ld6ALzSItUOxci3_4D8MAzJXV5eQQlRnMoPuFMOwACcwIFQSjGWZDNxbsxl4j84qc5MSOdCzU5EzlwQ6Po75f5Aprtd9Y85iw-kXeOJfDUIi-_6ku_5TvcfodwVMMhdUtYqqRX9YFlIl9CfuyBqEiKgCfGd2MUWcaOwobbCu8y0wsQtEO5GrUZHAdfbCJc0UsNUskDL2z18CR72kqn1TGDmPXFSw26HXFTr81QFHDvCyjmn5SNrNmNCDH-jfs8zm-v5vd"
               alt="Architectural blueprint"
-              fill
-              // loading="lazy"
-              className="object-cover"
+              loading="lazy"
+              className="object-cover w-full h-auto"
+              width={500}
+              height={300}
             />
           </div>
         </div>
@@ -407,26 +409,7 @@ export default function MapApprovalPage() {
 
           {/* FORM */}
           <div className="bg-white p-6 rounded-xl shadow-sm">
-            <form className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <input className="input" placeholder="Full Name" />
-                <input className="input" placeholder="+91" />
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <input className="input" placeholder="Plot Size (SQFT)" />
-                <input className="input" placeholder="City / Area" />
-              </div>
-
-              <textarea
-                className="input"
-                placeholder="Tell us about your project..."
-              />
-
-              <button className="w-full bg-green-700 text-white py-3 rounded-lg font-semibold">
-                Submit Consultation Request
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>

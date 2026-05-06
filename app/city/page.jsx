@@ -1,4 +1,5 @@
 import { Leaf, Sun, Grid3x3, CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 export default function CityPage() {
   return (
@@ -37,10 +38,11 @@ export default function CityPage() {
             </div>
             <div className="md:col-span-5 relative">
               <div className="aspect-[4/5] bg-surface-container-high rounded-lg overflow-hidden shadow-2xl relative z-0">
-                <img
+                <Image
                   alt="Luxury interior"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoQgF3X8Gia2san4WUd9aflibQFaWz4vKRvijcWxK_EnCV-78iKBjTRAoBPO0vlu3mIwvQvrJjOuYT3USz58JPeToBlm_CSJCeenAFpHm9iWG1x3BcNOWewuyxkzzL5RaF2rQW781ajM1LHBvPngiwJ3zxvInmObhd27eJ_Z0qiDonqvJWH0_ruqnyQi0blM1-wNDWOf7W3520I-3FLn2zVeonZymOPP-6_WvGFbEVho2PBR_1L2iUn2XHkVoQpT5iAbG0MnC78Za1"
                 />
               </div>
