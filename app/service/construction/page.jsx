@@ -157,7 +157,7 @@ export default function ConstructionPage() {
               >
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2"
+                  className="inline-flex items-center gap-2 text-offwhite"
                   aria-label="Contact Us to Start Your Building Project"
                 >
                   Start Your Building Project

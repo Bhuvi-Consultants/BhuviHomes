@@ -58,10 +58,10 @@ export default function sitemap() {
       lastModified: new Date(),
       priority: 0.7,
     },
-    {
-      url: `${baseUrl}/sitemap-projects.xml`,
-      lastModified: new Date(),
-      priority: 0.7,
-    },
+    // {
+    //   url: `${baseUrl}/sitemap-projects.xml`,
+    //   lastModified: new Date(),
+    //   priority: 0.7,
+    // },
   ];
 }

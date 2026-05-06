@@ -575,7 +575,7 @@ const PricingPlan = ({ type }) => {
   }, [type]);
 
   return (
-    <section className="w-full px-4 pt-12">
+    <section className="w-full px-4 pt-12 bg-offwhite">
       {/* Heading */}
       <h2 className="font-bold text-4xl text-center">
         Home {type === "Both" ? "Design & Construction" : type} Packages

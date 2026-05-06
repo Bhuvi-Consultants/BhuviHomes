@@ -21,7 +21,7 @@ const ProcessStep = ({
       <div className="relative flex items-start">
         
         {/* Step number */}
-        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-700 text-green-700-foreground font-medium text-lg shrink-0 z-10">
+        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-700 text-offwhite font-medium text-lg shrink-0 z-10">
           {number}
         </div>
 
