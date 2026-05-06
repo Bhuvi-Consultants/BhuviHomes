@@ -51,7 +51,7 @@ END:VCARD`;
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        class="lucide lucide-contact-icon lucide-contact"
+        className="lucide lucide-contact-icon lucide-contact"
       >
         <path d="M16 2v2" />
         <path d="M7 22v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />

@@ -18,7 +18,7 @@ async function getRelatedBlogs(category, currentSlug) {
   const blogs = Array.isArray(data) ? data : data.data || [];
 
   // remove current blog
-  return blogs.filter((blog) => blog.slug !== currentSlug).slice(0, 3);
+  return blogs.filter((blog) => currentSlug ? blog.slug !== currentSlug : blog).slice(0, 3);
 }
 
 // ==============================
@@ -41,7 +41,7 @@ export default async function RelatedBlogs({ category, currentSlug }) {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 ">
       <div className="max-w-6xl mx-auto px-4">
         {/* HEADER */}
         <div className="mb-10 text-center">

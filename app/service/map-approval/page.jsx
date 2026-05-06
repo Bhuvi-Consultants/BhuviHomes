@@ -13,6 +13,7 @@ import {
   Star,
 } from "lucide-react";
 import ContactForm from "./ContactForm";
+import RelatedBlogs from "@/components/blog/RelatedBlogs";
 
 /* ✅ SEO */
 export const metadata = {
@@ -62,12 +63,18 @@ export default function MapApprovalPage() {
               into a seamless path for your future home.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-[#006e1c] text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:opacity-90 transition-all">
+              <Link
+                href="#consult"
+                className="bg-[#006e1c] text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:opacity-90 transition-all"
+              >
                 Start Approval Now
-              </button>
-              <button className="bg-stone-200 text-stone-900 px-8 py-4 rounded-lg font-bold hover:bg-stone-300 transition-all">
+              </Link>
+              <Link
+                href="#process"
+                className="bg-white text-stone-900 px-8 py-4 rounded-lg font-bold hover:bg-stone-300 transition-all"
+              >
                 View Our Process
-              </button>
+              </Link>
             </div>
           </div>
           <div className="relative aspect-auto rounded-2xl overflow-hidden shadow-2xl">
@@ -84,7 +91,7 @@ export default function MapApprovalPage() {
       </section>
 
       {/* WHAT IS MAP APPROVAL */}
-      <section className="bg-[#f3f5e9] py-24 px-8">
+      <section className="bg-white py-24 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <span className="text-[#006e1c] font-bold tracking-widest text-sm uppercase mb-4 block">
@@ -127,8 +134,8 @@ export default function MapApprovalPage() {
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className="py-24 px-8">
+      {/* REQUIREMENT */}
+      <section className="pt-24 pb-16 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1 bg-[#d7e8c4]/20 p-10 rounded-2xl">
@@ -155,32 +162,56 @@ export default function MapApprovalPage() {
                 ))}
               </div>
             </div>
-            <div className="lg:col-span-2 bg-[#edefe4] p-10 rounded-2xl">
+            <div className="lg:col-span-2 bg-white p-8 rounded-2xl">
               <h2 className="font-['Manrope'] text-3xl font-bold mb-8 text-stone-900">
                 Required Documents
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <ul className="space-y-4">
                   {[
-                    { icon: FileText, label: "Deed + Power of Attorney" },
-                    { icon: ReceiptText, label: "Mutation" },
-                    { icon: FileText, label: "Khatiyan" },
+                    {
+                      icon: FileText,
+                      label: "Deed + Power of Attorney",
+                      link: "https://www.google.com/search?smstk=ChhVSGxwaGJPemRjR1Rsd0ttdVZiTlZaTT0QBA%3D%3D&smstidx=0&q=online+deed+download+jharkhand&udm=50&csuir=1&aep=34&kgs=3d3406099542014b&shem=rimspwouoe&shndl=37&shmd=H4sIAAAAAAAA_3XOMQoCMRAFULeTbQRLC1ksBRO3sRDvEsadMIluJiGJZMs9lmfwDt7FFbQS2w_v_18_q3rtubesG9QaG_SFew_YXAzEqwHG1cnkHNJRylKKoJQh20503smkIXZmF6J3XoJ1Kk1Gq2xu7sxgexGYNsuvJu-p1wKs3M6GcTFW9_mjUv-6rQPSSZ7j9MAyfTQpioBWc5bt8JOpyTNCRNUe9hje8y-5JVfN4AAAAA&shmds=v1_ATWGeeM6bLLTgBDiNnbZxmvzs6lfpO0NJqHwX6ba6GPLRj2ttw&source=sh%2Fx%2Faio%2Fm1%2F1&mtid=a0v7aZWkGIWP4-EPm7ragQ0",
+                    },
+                    {
+                      icon: ReceiptText,
+                      label: "Mutation",
+                      link: "https://jharbhoomi.co.in/",
+                    },
+                    {
+                      icon: FileText,
+                      label: "Khatiyan",
+                      link: "https://jharbhoomi.co.in/",
+                    },
                   ].map((item) => (
                     <li key={item.label} className="flex items-center gap-3">
                       <item.icon className="text-[#006e1c]" />
-                      <span>{item.label}</span>
+                      <Link href={item?.link ? item?.link : ""} target="_blank">
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
                 <ul className="space-y-4">
                   {[
-                    { icon: CheckCircle, label: "Land Receipt" },
+                    {
+                      icon: CheckCircle,
+                      label: "Land Receipt",
+                      link: "https://jharbhoomi.co.in/",
+                    },
                     { icon: IdCard, label: "Aadhar Card" },
-                    { icon: Building2, label: "Holding Tax (For RMC Area)" },
+                    {
+                      icon: Building2,
+                      label: "Holding Tax (For RMC Area)",
+                      link: "https://suda.jharkhand.gov.in/jharkhandmunicipal/citizen/",
+                    },
                   ].map((item) => (
                     <li key={item.label} className="flex items-center gap-3">
                       <item.icon className="text-[#006e1c]" />
-                      <span>{item.label}</span>
+                      <Link href={item?.link ? item?.link : ""} target="_blank">
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -191,7 +222,7 @@ export default function MapApprovalPage() {
       </section>
 
       {/* FEES */}
-      <section className="bg-[#f3f5e9] py-20 px-6">
+      <section className="bg-gradient-to-b from-white to-offwhite pt-28 pb-12 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
           <div className="text-center mb-12">
@@ -245,7 +276,7 @@ export default function MapApprovalPage() {
               </p>
 
               <Link
-                href="/contact"
+                href="#consult"
                 className="bg-white text-green-700 px-5 py-2 rounded-md text-sm font-semibold"
               >
                 Request Quote
@@ -256,7 +287,7 @@ export default function MapApprovalPage() {
       </section>
 
       {/* Payment */}
-      <section className="bg-[#eef1e7] py-20 px-6">
+      <section className="pb-16 pt-12 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-center text-2xl font-semibold mb-10">
             Flexible Payment Schedules
@@ -304,9 +335,9 @@ export default function MapApprovalPage() {
 
               <div className="space-y-5">
                 {[
-                  "1/3rd at Applying",
-                  "1/3rd Before Final Approval",
-                  "1/3rd at Final Approval",
+                  "1st - 1/3rd at the time of Final Approval",
+                  "2nd - 1/3rd after 1 year",
+                  "3rd - 1/3rd after 2 year",
                 ].map((text, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="w-8 h-8 border-2 border-green-700 text-green-700 rounded-full flex items-center justify-center text-sm">
@@ -321,8 +352,8 @@ export default function MapApprovalPage() {
         </div>
       </section>
 
-      {/* Regulatory */}
-      <section className="bg-[#e9ece1] py-20 px-6">
+      {/* PROCESS & Regulatory */}
+      <section id="process" className="bg-white py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-2xl font-semibold mb-12">
             Authorized Regulatory Flow
@@ -330,38 +361,34 @@ export default function MapApprovalPage() {
 
           {/* Authorities */}
           <div className="flex justify-center gap-12 mb-12 opacity-70">
-            {/* {["RMC Ranchi", "RRDA", "T&CP"].map((item) => ( */}
-            <Link
-              href="https://www.ranchimunicipal.com/"
-              target="_blank"
-              className="cursor flex flex-col items-center"
-            >
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm mb-2">
-                🏢
-              </div>
-              <span className="text-xs">RMC</span>
-            </Link>
-            <Link
-              href="https://ranchi.nic.in/rural/"
-              target="_blank"
-              className="cursor flex flex-col items-center"
-            >
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm mb-2">
-                🏢
-              </div>
-              <span className="text-xs">RRDA</span>
-            </Link>
-            <Link
-              href="https://hazaribag.nic.in/service/hazaribag-municipality/"
-              target="_blank"
-              className="cursor flex flex-col items-center"
-            >
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm mb-2">
-                🏢
-              </div>
-              <span className="text-xs">HMC</span>
-            </Link>
-            {/* ))} */}
+            {[
+              { label: "RMC Ranchi", link: "https://www.ranchimunicipal.com/" },
+              {
+                label: "RRDA",
+                link: "https://jhbpams.jharkhand.gov.in/bpamsclient/default.aspx",
+                // link="https://ranchi.nic.in/rural/"
+              },
+              {
+                label: "HMC",
+                link: "https://hazaribag.nic.in/service/hazaribag-municipality/",
+              },
+              {
+                label: "KHUNTI",
+                link: "https://udhd.jharkhand.gov.in/ulb/Khunti/khunti.aspx",
+              },
+            ].map((item, index) => (
+              <Link
+              key={index}
+                href={item.link}
+                target="_blank"
+                className="cursor flex flex-col items-center"
+              >
+                <div className="w-12 h-12 bg-offwhite rounded-full flex items-center justify-center shadow-sm mb-2">
+                  🏢
+                </div>
+                <span className="text-xs">{item.label}</span>
+              </Link>
+            ))}
           </div>
 
           {/* Timeline */}
@@ -372,6 +399,7 @@ export default function MapApprovalPage() {
               "Site Visit",
               "Drafting",
               "Online Upload",
+              "JEE Visit",
               "Final Certificate",
             ].map((step, i) => (
               <div key={i} className="flex flex-col items-center z-10">
@@ -388,7 +416,7 @@ export default function MapApprovalPage() {
       </section>
 
       {/* CONSULTATION */}
-      <section className="bg-[#f3f5e9] py-20 px-6">
+      <section id="consult" className="bg-offwhite py-20 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
           {/* LEFT */}
           <div>
@@ -415,23 +443,13 @@ export default function MapApprovalPage() {
       </section>
 
       {/* Blog */}
-      <section className="py-24 px-8 bg-gray-50">
+      <section className="pt-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between mb-10">
+          <div className="flex justify-between">
             <h2 className="text-3xl font-bold">Insights</h2>
             <Link href="/blogs">View All →</Link>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-xl overflow-hidden">
-                <div className="h-48 bg-gray-200" />
-                <div className="p-4">
-                  <h4 className="font-semibold">Blog Title</h4>
-                </div>
-              </div>
-            ))}
-          </div>
+          <RelatedBlogs category="Construction" />
         </div>
       </section>
     </>
