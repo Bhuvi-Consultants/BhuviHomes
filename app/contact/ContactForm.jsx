@@ -59,10 +59,11 @@ export default function ContactForm() {
 
     try {
       console.log(newLead);
-      const response = await axios.post(
-        `${process.env.API_BASE_URL}/api/v1/lead`,
-        newLead,
-      );
+      const response = await axios.post("/api/lead", newLead);
+      // const response = await axios.post(
+      //   `${process.env.API_BASE_URL}/api/v1/lead`,
+      //   newLead,
+      // );
       console.log(response);
     } catch (error) {
       console.log(error);
@@ -80,7 +81,7 @@ export default function ContactForm() {
             onChange={(e) => setName(e.target.value)}
             placeholder="John Doe"
             required
-                      className="input"
+            className="input"
           />
         </div>
 
@@ -92,7 +93,7 @@ export default function ContactForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="example@example.com"
-                      className="input"
+            className="input"
           />
         </div>
       </div>
@@ -106,7 +107,7 @@ export default function ContactForm() {
             onChange={(e) => setPhone(e.target.value)}
             placeholder="+91-8986699600"
             required
-                      className="input"
+            className="input"
           />
         </div>
 
@@ -172,7 +173,7 @@ export default function ContactForm() {
           placeholder="Tell us about your project, timeline, and any specific requirements."
           rows={5}
           required
-                    className="input"
+          className="input"
         />
       </div>
 
