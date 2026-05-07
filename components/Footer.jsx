@@ -9,7 +9,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-serif font-medium mb-4">BhuviHomes</h3>
+            <h3 className="text-xl font-serif font-medium mb-4">
+              <span className="text-chlorophyll">Bhuvi</span> Homes
+            </h3>
             <p className="mb-4 text-muted-foreground">
               We design and build homes you'll love to live in. Your home is in
               safe hands with our team of experts.
@@ -32,7 +34,7 @@ const Footer = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  class="lucide lucide-instagram-icon lucide-instagram"
+                  className="lucide lucide-instagram-icon lucide-instagram"
                 >
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -55,7 +57,7 @@ const Footer = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  class="lucide lucide-facebook-icon lucide-facebook"
+                  className="lucide lucide-facebook-icon lucide-facebook"
                 >
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
@@ -76,7 +78,7 @@ const Footer = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  class="lucide lucide-twitter-icon lucide-twitter"
+                  className="lucide lucide-twitter-icon lucide-twitter"
                 >
                   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                 </svg>
@@ -120,7 +122,7 @@ const Footer = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  class="lucide lucide-youtube-icon lucide-youtube"
+                  className="lucide lucide-youtube-icon lucide-youtube"
                 >
                   <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
                   <path d="m10 15 5-3-5-3z" />
@@ -201,6 +203,15 @@ const Footer = () => {
                     Get a Quote
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/sitemap"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                    aria-label="Get a quote from BhuviHomes"
+                  >
+                    Sitemap
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -221,7 +232,7 @@ const Footer = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  class="lucide lucide-map-pinned-icon lucide-map-pinned"
+                  className="lucide lucide-map-pinned-icon lucide-map-pinned"
                 >
                   <path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0" />
                   <circle cx="12" cy="8" r="2" />
@@ -265,7 +276,7 @@ const Footer = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  class="lucide lucide-mail-icon lucide-mail"
+                  className="lucide lucide-mail-icon lucide-mail"
                 >
                   <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
                   <rect x="2" y="4" width="20" height="16" rx="2" />

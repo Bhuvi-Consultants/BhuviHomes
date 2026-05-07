@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 
 const Project = [
   {
@@ -353,13 +354,15 @@ export default function ProjectCarousel({ Ptype = "All" }) {
               <div className="relative w-full aspect-video overflow-hidden">
                 {p.URL ? (
                   <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${cleanYouTubeId(p.URL)}?mute=1`}
+                    className="w-full h-full rounded-xl"
+                    src={`https://www.youtube.com/embed/${p.URL}?rel=0&modestbranding=1`}
                     title={p.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                   />
                 ) : (
-                  <img
+                  <Image
                     src={p.image}
                     alt={p.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

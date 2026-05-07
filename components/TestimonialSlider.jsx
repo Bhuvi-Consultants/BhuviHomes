@@ -15,7 +15,6 @@ const testimonials = [
 const TestimonialSlider = () => {
   return (
     <section className="py-10 px-4 md:px-12 lg:px-24">
-      
       <h2 className="text-3xl font-semibold text-center">
         Client Testimonials
       </h2>
@@ -35,25 +34,21 @@ const TestimonialSlider = () => {
       >
         {testimonials.map((item) => (
           <SwiperSlide key={item.id}>
-            
             <div className="overflow-hidden rounded-xl bg-white shadow">
-              
               <div className="aspect-video w-full">
                 <iframe
-                  className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${item.videoId}?mute=1`}
+                  className="w-full h-full rounded-xl"
+                  src={`https://www.youtube.com/embed/${item.videoId}?rel=0&modestbranding=1`}
                   title="Client Testimonial"
-                  allow="autoplay; encrypted-media"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
               </div>
-
             </div>
-
           </SwiperSlide>
         ))}
       </Swiper>
-
     </section>
   );
 };

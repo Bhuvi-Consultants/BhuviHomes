@@ -335,9 +335,9 @@ export default function MapApprovalPage() {
 
               <div className="space-y-5">
                 {[
-                  "1st - 1/3rd at the time of Final Approval",
-                  "2nd - 1/3rd after 1 year",
-                  "3rd - 1/3rd after 2 year",
+                  "1/3rd at the time of Final Approval",
+                  "1/3rd after 1 year",
+                  "1/3rd after 2 year",
                 ].map((text, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="w-8 h-8 border-2 border-green-700 text-green-700 rounded-full flex items-center justify-center text-sm">
@@ -449,7 +449,7 @@ export default function MapApprovalPage() {
             <h2 className="text-3xl font-bold">Insights</h2>
             <Link href="/blogs">View All →</Link>
           </div>
-          <RelatedBlogs category="Construction" />
+          <RelatedBlogs category="Approval" />
         </div>
       </section>
     </>

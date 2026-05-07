@@ -90,7 +90,7 @@ const Hero = () => {
               </div>
 
               {/* Badge Top Right */}
-              <div className="absolute -top-9 -right-6 bg-white rounded-lg shadow-lg p-3 animate-fade-in">
+              {/* <div className="absolute -top-9 -right-6 bg-white rounded-lg shadow-lg p-3 animate-fade-in">
                 <div className="flex items-center gap-3">
                   <div className="bg-primary/10 p-2 rounded-full">
                     <HeartHandshake className="w-6 h-6 text-primary" />
@@ -99,7 +99,7 @@ const Hero = () => {
                     Most Trusted
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
