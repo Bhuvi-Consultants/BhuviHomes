@@ -80,7 +80,41 @@ export default function RootLayout({ children }) {
         {/* Google Analytics */}
 
         {/* Local Business Schema */}
+        <Script
+          id="local-business-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "BhuviHomes",
+            url: "https://bhuvihomes.in",
 
+            address: {
+              "@type": "PostalAddress",
+              streetAddress:
+                "3rd Floor, The Western Tower, Ratu Road",
+              addressLocality: "Ranchi",
+              addressRegion: "Jharkhand",
+              postalCode: "834001",
+              addressCountry: "IN",
+            },
+
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+91-89866-99600",
+              contactType: "Customer Service",
+              email: "homes.bhuvi@gmail.com",
+              areaServed: "IN",
+              availableLanguage: ["English", "Hindi"],
+            },
+
+            sameAs: [
+              "https://www.instagram.com/bhuvi.homes/",
+            ],
+          })}
+        </Script>
 
         {/* GTM Noscript */}
 
