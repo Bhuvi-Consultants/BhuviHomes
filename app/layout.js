@@ -38,11 +38,24 @@ export const metadata = {
     canonical: siteUrl,
   },
 
-  robots: {
-    index: isProduction,
-    follow: isProduction,
-    nocache: !isProduction,
-  },
+  robots: isProduction
+    ? {
+      index: true,
+      follow: true,
+    }
+    : {
+      index: false,
+      follow: false,
+      nocache: true,
+
+      googleBot: {
+        index: false,
+        follow: false,
+        noimageindex: true,
+        nocache: true,
+        noarchive: true,
+      },
+    },
 
   openGraph: {
     title: "Home Design & Construction | BhuviHomes",
@@ -52,7 +65,7 @@ export const metadata = {
     siteName: "BhuviHomes",
     images: [
       {
-        url: "/CoverPhoto.webp",
+        url: `${siteUrl}/CoverPhoto.webp`,
         width: 1200,
         height: 630,
       },
@@ -66,15 +79,13 @@ export const metadata = {
     title: "Home Design & Construction | BhuviHomes",
     description:
       "Home design & construction services in Ranchi.",
-    images: ["/CoverPhoto.webp"],
+    images: [`${siteUrl}/CoverPhoto.webp`],
   },
 
   icons: {
-    icon: "/favicon.ico",
-    apple: "/android-chrome-192x192.png",
+    icon: `${siteUrl}/favicon.ico`,
+    apple: `${siteUrl}/android-chrome-192x192.png`,
   },
-
-
 
 };
 
@@ -96,7 +107,7 @@ export default function RootLayout({ children }) {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "BhuviHomes",
-            url: "https://bhuvihomes.in",
+            url: siteUrl,
 
             address: {
               "@type": "PostalAddress",
