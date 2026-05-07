@@ -19,7 +19,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-offwhite">
       {/* ✅ Structured Data */}
       <script
         type="application/ld+json"
@@ -27,7 +27,7 @@ export default function ContactPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-20 bg-offwhite">
+      <section className="pt-32 pb-20 md:pt-40 md:pb-20">
         <div className="max-w-7xl mx-auto px-4 w-full text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight mb-6">
             Contact Us

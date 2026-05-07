@@ -39,7 +39,7 @@ export default function MapApprovalPage() {
   };
 
   return (
-    <>
+    <div className="bg-offwhite">
       {/* ✅ Structured Data */}
       <script
         type="application/ld+json"
@@ -452,7 +452,7 @@ export default function MapApprovalPage() {
           <RelatedBlogs category="Approval" />
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

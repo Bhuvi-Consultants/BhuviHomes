@@ -51,7 +51,7 @@ export default function ConstructionPage() {
   };
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-offwhite">
       {/* ✅ JSON-LD script */}
       <script
         type="application/ld+json"
@@ -87,7 +87,7 @@ export default function ConstructionPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-20 bg-gray-50">
+      <section className="pt-32 pb-20 md:pt-40 md:pb-20 ">
         <div className="max-w-7xl mx-auto px-4 w-full text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight mb-6">
             Construction

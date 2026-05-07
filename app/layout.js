@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import Whatsapp from "@/components/Whatsapp";
@@ -11,87 +12,78 @@ export const metadata = {
   metadataBase: new URL("https://bhuvihomes.in"),
 
   title: {
-    default: "Bhuvi Homes - Construction & Design in Ranchi",
-    template: "%s | Bhuvi Homes",
+    default: "Home Design & Construction in Ranchi | BhuviHomes",
+    template: "%s | BhuviHomes",
   },
 
   description:
-    "Bhuvi Homes provides house construction, interior design, and map approval services in Ranchi and Jharkhand.",
+    "BhuviHomes offers expert home design and construction services in Ranchi.",
 
   keywords: [
-    "construction company in ranchi",
-    "home construction jharkhand",
-    "architect in ranchi",
+    "homes",
+    "bhuvi homes",
+    "construction",
+    "design",
+    "ranchi",
   ],
 
+  authors: [{ name: "Shubham Kumar" }],
+
   alternates: {
-    canonical: "/",
+    canonical: "https://bhuvihomes.in",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 
   openGraph: {
-    title: "Bhuvi Homes",
-    description: "Construction and design company in Ranchi.",
+    title: "Home Design & Construction | BhuviHomes",
+    description:
+      "Premium home design & construction services in Ranchi.",
     url: "https://bhuvihomes.in",
-    siteName: "Bhuvi Homes",
+    siteName: "BhuviHomes",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/CoverPhoto.webp",
         width: 1200,
         height: 630,
       },
     ],
+    locale: "en_IN",
     type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Home Design & Construction | BhuviHomes",
+    description:
+      "Home design & construction services in Ranchi.",
+    images: ["/CoverPhoto.webp"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/android-chrome-192x192.png",
+  },
+
+
+
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Bhuvi Homes",
-              url: "https://bhuvihomes.in",
-              telephone: "+91-8986699600",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Ranchi",
-                addressRegion: "Jharkhand",
-                addressCountry: "IN",
-              },
-              areaServed: {
-                "@type": "Place",
-                name: "Jharkhand",
-              },
-              sameAs: [
-                "https://www.facebook.com/",
-                "https://www.instagram.com/",
-              ],
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Bhuvi Homes",
-              url: "https://bhuvihomes.in",
-              telephone: "+91-8986699600",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Ranchi",
-                addressRegion: "Jharkhand",
-                addressCountry: "IN",
-              },
-            }),
-          }}
-        />
+        {/* Google Tag Manager */}
+
+        {/* Google Analytics */}
+
+        {/* Local Business Schema */}
+
+
+        {/* GTM Noscript */}
+
         <div className="flex flex-col min-h-screen overflow-hidden">
           <NavBar />
 

@@ -75,11 +75,11 @@ const Project = [
 
   {
     id: 8,
-    title: "classNameical G+1 Farm House",
+    title: "Classical G+1 Farm House",
     location: "Ranchi",
     type: "Design",
     // image: "/projects/p1.jpg",
-    slug: "classNameical-farm-house",
+    slug: "classical-farm-house",
     URL: "KZW-xWIyQQ8?si=jZ1nhI51lbVEriwK",
   },
   {

@@ -47,7 +47,7 @@ export default async function BlogPage() {
   const blogs = await res.json();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-offwhite">
       {/* ✅ JSON-LD script */}
       <script
         type="application/ld+json"
@@ -55,7 +55,7 @@ export default async function BlogPage() {
       />
 
       {/* SEO-focused Page Header */}
-      <section className="bg-gray-50 pt-32 pb-14 md:pt-44 md:pb-16">
+      <section className=" pt-32 pb-14 md:pt-44 md:pb-16">
         <div className="max-w-7xl mx-auto px-4 w-full text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight mb-6">
             Home Design & Construction <span className="text-leaf">Blog</span>

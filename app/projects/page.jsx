@@ -186,7 +186,7 @@ export default function ProjectsPage() {
       />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 md:pt-40 bg-gray-50">
+      <section className="pt-32 pb-20 md:pt-40 bg-offwhite">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
             Our Projects
