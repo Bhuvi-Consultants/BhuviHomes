@@ -1,5 +1,5 @@
 export async function GET() {
-  const baseUrl = "https://staging.bhuvihomes.in";
+const baseUrl =  process.env.NEXT_PUBLIC_SITE_URL;
   const projects = await fetch(`${process.env.API_BASE_URL}/api/v1/projects/public`, {
     cache: "force-cache",
   }).then((res) => res.json());
