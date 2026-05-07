@@ -8,8 +8,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://bhuvihomes.in";
+
+const isProduction = siteUrl === "https://bhuvihomes.in";
+
 export const metadata = {
-  metadataBase: new URL("https://bhuvihomes.in"),
+  metadataBase: new URL(siteUrl),
 
   title: {
     default: "Home Design & Construction in Ranchi | BhuviHomes",
@@ -30,18 +35,20 @@ export const metadata = {
   authors: [{ name: "Shubham Kumar" }],
 
   alternates: {
-    canonical: "https://bhuvihomes.in",
+    canonical: siteUrl,
   },
+
   robots: {
-    index: true,
-    follow: true,
+    index: isProduction,
+    follow: isProduction,
+    nocache: !isProduction,
   },
 
   openGraph: {
     title: "Home Design & Construction | BhuviHomes",
     description:
       "Premium home design & construction services in Ranchi.",
-    url: "https://bhuvihomes.in",
+    url: siteUrl,
     siteName: "BhuviHomes",
     images: [
       {
