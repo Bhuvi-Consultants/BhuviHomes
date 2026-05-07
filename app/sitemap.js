@@ -49,14 +49,19 @@ export default function sitemap() {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/city`,
+      url: `${baseUrl}/blogs`,
       lastModified: new Date(),
       priority: 0.7,
     },
+    // {
+    //   url: `${baseUrl}/city`,
+    //   lastModified: new Date(),
+    //   priority: 0.7,
+    // },
     {
       url: `${baseUrl}/sitemap-blogs.xml`,
       lastModified: new Date(),
-      priority: 0.7,
+      priority: 0.9,
     },
     // {
     //   url: `${baseUrl}/sitemap-projects.xml`,
