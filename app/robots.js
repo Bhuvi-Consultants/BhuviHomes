@@ -8,6 +8,6 @@ export default function robots() {
       allow: isProduction ? "/" : "",
       disallow: isProduction ? "" : "/",
     },
-    sitemap: `${process.env.NEXT_PUBLIC_SITE_URL}/sitemap.xml`,
+    sitemap: "https://bhuvihomes.in/sitemap.xml",
   };
 }
